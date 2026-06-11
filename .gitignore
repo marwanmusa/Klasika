@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 # Added by code-review-graph
 .code-review-graph/
+
+# Mock server database
+db.json
+
