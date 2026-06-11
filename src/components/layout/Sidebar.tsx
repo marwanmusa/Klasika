@@ -175,10 +175,8 @@ export default function Sidebar({ role }: { role: UserRole }) {
       {/* Mobile hamburger + sheet */}
       <div className="lg:hidden fixed top-3 left-3 z-50">
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-10 w-10" style={{ background: '#ffffff', boxShadow: 'var(--shadow-card)' }}>
-              <Menu size={20} style={{ color: '#17191c' }} />
-            </Button>
+          <SheetTrigger render={<Button variant="ghost" size="icon" className="h-10 w-10" style={{ background: '#ffffff', boxShadow: 'var(--shadow-card)' }} />}>
+            <Menu size={20} style={{ color: '#17191c' }} />
           </SheetTrigger>
           <SheetContent side="left" className="p-0 w-[240px]" style={{ background: '#f7f7f8' }}>
             <SidebarContent role={role} onNavigate={() => setMobileOpen(false)} />

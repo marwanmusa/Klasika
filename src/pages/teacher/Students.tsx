@@ -9,7 +9,7 @@ import { getGradesByStudent, computeSubjectAverage } from '@/data/grades';
 import { getAttendanceStats } from '@/data/attendance';
 import { subjects } from '@/data/classes';
 import type { Student } from '@/types';
-import { Search, X } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function TeacherStudents() {
@@ -66,12 +66,15 @@ export default function TeacherStudents() {
                   const stats = getAttendanceStats(student.id);
                   return (
                     <Sheet key={student.id} open={selectedStudent?.id === student.id} onOpenChange={(open) => !open && setSelectedStudent(null)}>
-                      <SheetTrigger asChild>
-                        <tr
-                          className="cursor-pointer transition-colors"
-                          style={{ borderBottom: '1px solid #e5e5e5' }}
-                          onClick={() => setSelectedStudent(student)}
-                        >
+                      <SheetTrigger
+                        render={
+                          <tr
+                            className="cursor-pointer transition-colors"
+                            style={{ borderBottom: '1px solid #e5e5e5' }}
+                            onClick={() => setSelectedStudent(student)}
+                          />
+                        }
+                      >
                           <td className="px-6 py-4">
                             <div className="flex items-center gap-3">
                               <Avatar className="h-8 w-8" style={{ background: student.avatarColor }}>
@@ -105,7 +108,6 @@ export default function TeacherStudents() {
                               {student.gpa >= 3.0 ? 'Good Standing' : 'Needs Attention'}
                             </Badge>
                           </td>
-                        </tr>
                       </SheetTrigger>
                       <SheetContent className="w-[400px] sm:w-[540px] overflow-y-auto">
                         <div className="space-y-6 pt-6">

@@ -4,7 +4,7 @@ import { students } from '@/data/users';
 import { getAttendanceStats } from '@/data/attendance';
 import { grades, assignments, getGradeLetter } from '@/data/grades';
 import { getScheduleByClass } from '@/data/classes';
-import { CalendarCheck, ClipboardList, GraduationCap, TrendingUp } from 'lucide-react';
+import { CalendarCheck, ClipboardList, TrendingUp } from 'lucide-react';
 
 export default function StudentDashboard() {
   const student = students[0]; // Default Aisha Putri

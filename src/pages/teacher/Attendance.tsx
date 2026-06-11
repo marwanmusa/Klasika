@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { students } from '@/data/users';
 import { classes } from '@/data/classes';
 import { attendanceRecords } from '@/data/attendance';

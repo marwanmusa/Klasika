@@ -30,11 +30,9 @@ export default function TeacherAssignments() {
       <div className="flex items-center justify-between">
         <div />
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogTrigger asChild>
-            <Button style={{ background: '#17191c', color: '#ffffff', borderRadius: 9999, fontSize: 14, fontWeight: 450 }}>
-              <Plus size={16} className="mr-2" />
-              Add Assignment
-            </Button>
+          <DialogTrigger render={<Button style={{ background: '#17191c', color: '#ffffff', borderRadius: 9999, fontSize: 14, fontWeight: 450 }} />}>
+            <Plus size={16} className="mr-2" />
+            Add Assignment
           </DialogTrigger>
           <DialogContent>
             <div className="space-y-4 p-2">

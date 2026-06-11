@@ -39,14 +39,12 @@ export default function TopBar({ title, user, onLogout }: TopBarProps) {
       <div className="flex items-center gap-3">
         {/* Notification bell */}
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-9 w-9 relative">
-              <Bell size={20} style={{ color: '#777b86' }} />
-              <span
-                className="absolute top-1 right-1 w-2 h-2 rounded-full"
-                style={{ background: '#5d2a1a' }}
-              />
-            </Button>
+          <TooltipTrigger render={<Button variant="ghost" size="icon" className="h-9 w-9 relative" />}>
+            <Bell size={20} style={{ color: '#777b86' }} />
+            <span
+              className="absolute top-1 right-1 w-2 h-2 rounded-full"
+              style={{ background: '#5d2a1a' }}
+            />
           </TooltipTrigger>
           <TooltipContent>Notifications</TooltipContent>
         </Tooltip>
@@ -81,10 +79,8 @@ export default function TopBar({ title, user, onLogout }: TopBarProps) {
 
         {/* Logout */}
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-9 w-9" onClick={onLogout}>
-              <LogOut size={18} style={{ color: '#777b86' }} />
-            </Button>
+          <TooltipTrigger render={<Button variant="ghost" size="icon" className="h-9 w-9" onClick={onLogout} />}>
+            <LogOut size={18} style={{ color: '#777b86' }} />
           </TooltipTrigger>
           <TooltipContent>Sign out</TooltipContent>
         </Tooltip>

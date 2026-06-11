@@ -18,7 +18,7 @@ export default function StudentAssignments() {
       const grade = grades.find(g => g.studentId === student.id && g.assignmentId === a.id);
       const now = new Date('2024-12-15');
       const due = new Date(a.dueDate);
-      let status: AssignmentStatus = 'pending';
+      let status: AssignmentStatus;
       if (grade) status = 'graded';
       else if (due < now) status = 'overdue';
       else status = 'pending';

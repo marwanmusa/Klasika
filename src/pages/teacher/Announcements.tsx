@@ -21,11 +21,9 @@ export default function TeacherAnnouncements() {
     <div className="space-y-6">
       <div className="flex justify-end">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogTrigger asChild>
-            <Button style={{ background: '#17191c', color: '#ffffff', borderRadius: 9999, fontSize: 14, fontWeight: 450 }}>
-              <Plus size={16} className="mr-2" />
-              New Announcement
-            </Button>
+          <DialogTrigger render={<Button style={{ background: '#17191c', color: '#ffffff', borderRadius: 9999, fontSize: 14, fontWeight: 450 }} />}>
+            <Plus size={16} className="mr-2" />
+            New Announcement
           </DialogTrigger>
           <DialogContent>
             <div className="space-y-4 p-2">
